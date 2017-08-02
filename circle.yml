@@ -1,0 +1,38 @@
+# credits to Jonathan
+# https://johanatan.github.io/posts/2017-04-13-hakyll-circleci.html
+
+general:
+  branches:
+    only:
+      - master
+
+dependencies:
+  cache_directories:
+    - "~/.stack"
+    - "src/.stack-work"
+    - "src/_cache"
+  pre:
+    - wget https://github.com/commercialhaskell/stack/releases/download/v1.4.0/stack-1.4.0-linux-x86_64.tar.gz -O /tmp/stack.gz
+    - gunzip /tmp/stack.gz && chmod +x /tmp/stack
+    - sudo mv /tmp/stack /usr/bin/stack
+  override:
+    - stack setup
+    - cd src/ && make build
+
+test:
+  override:
+    - cd src/ && make build
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - cd src/ && find .. -maxdepth 1 -type d | grep -v .git | grep -v ../src | grep -v ^\.\.$ | xargs -r rm -r
+      - cd src/ && find .. -maxdepth 1 -type f | grep -v .git | grep -v circle\.yml | xargs -r rm
+      - git config --global user.email circleci@circleci.com
+      - git config --global user.name CircleCI
+      - cd src/ && make build && cp -a _site/. ..
+      - git status && git add -A .
+      - git commit -m "Update (`date '+%F %T %Z'`) [ci skip]"
+      - git fetch && git rebase
+      - git push
