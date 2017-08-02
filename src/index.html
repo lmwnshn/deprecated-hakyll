@@ -1,0 +1,30 @@
+---
+title: Home
+narrow: true
+---
+
+<div class="row">
+    <img class="col-sm-6" src="/images/logo_peek.png"/>
+    <div class="col-sm-6">
+        <p>
+            <h2>Hi. Where to?</h2>
+            <ul>
+                <li><a href="/blog/page/1/">Blog</a></li>
+                <li><a href="/courses/">Courses @ CMU</a></li>
+            </ul>
+        </p>
+    </div>
+</div>
+$if(posts)$
+    </br>
+    <div>
+        <b>Blog preview:</b>
+        <ul>
+            $for(posts)$
+                <li>
+                    <a href="$url$">$title$</a> - $date$
+                </li>
+            $endfor$
+        </ul>
+    </div>
+$endif$

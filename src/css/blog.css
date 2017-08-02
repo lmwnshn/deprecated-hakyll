@@ -1,0 +1,102 @@
+:root {
+    /* https://designschool.canva.com/blog/100-color-combinations/ */
+    /* Color scheme 02 */
+    --color-mist: #90AFC5;
+    --color-stone: #336B87;
+    --color-shadow: #2A3132;
+    --color-autumn: #763626;
+}
+
+em {
+    font-style: italic;
+}
+
+body {
+    margin: 40px auto;
+    max-width: 60em;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #444;
+    padding: 0 10px;
+}
+
+h1, h2, h3 {
+    line-height: 1.2
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+header {
+    border-bottom: 2px solid var(--color-mist);
+    margin-bottom: 2em;    
+}
+
+nav a {
+    color: var(--color-stone);
+    font-weight: bold;
+    margin-left: 2.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+header {
+    margin: 0.5em;
+}
+
+footer {
+    border-top: solid 2px var(--color-mist);
+    font-size: 0.8em;
+    margin-top: 2em;
+    margin: 0.2em;
+    padding: 0.2em 0.2em;
+}
+
+#sidebar {
+    padding-left: 0;
+    height: 100%;
+}
+
+@media (max-width: 576px) {
+    #sidebar {
+        display: none;
+    }
+}
+
+.toc-list-item {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul, ol {
+    margin-left: 2em;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+li {
+    padding-left: 0.5em;
+}
+
+.figure img {
+    width: 100%;
+}
+
+.figure .caption {
+    font-variant: all-small-caps;
+}
