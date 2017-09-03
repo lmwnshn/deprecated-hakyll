@@ -16,6 +16,18 @@ main :: IO ()
 main = hakyll $ do
 
     ----------
+    --  github
+    ----------
+
+    match "CNAME" $ do
+        route   idRoute
+        compile copyFileCompiler
+
+    match "README.md" $ do
+        route   idRoute
+        compile copyFileCompiler
+
+    ----------
     --  assets
     ----------
 
