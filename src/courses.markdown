@@ -17,14 +17,14 @@ tocbot: true
 
 ## Math
 
+- 21-373 Algebraic Structures, F17
 - 21-268 Multidimensional Calculus, F17
-- 36-225 Introduction to Probability Theory, F17 (currently waitlisted)
 - 21-242 Matrix Theory, F16
 
 ## Other
 
 - 82-273 Introduction to Japanese Language and Culture, F17
-- 80-180 Nature of Language, F17
+- 82-117 Arabic Conversation & Dialect I, F17
 - 82-115 Beginning Arabic for Oral Communication, S17
 - 73-100 Principles of Economics, S17
 - 33-121 Physics I for Science Students, S17
